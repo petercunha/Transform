@@ -3,12 +3,12 @@ var app = express();
 
 /* Serves main page */
 app.get("/", function(req, res) {
-   res.sendFile( __dirname + '/dist/index.html');
+   res.sendFile( __dirname + '/docs/index.html');
 });
 
 /* Serves all the static files */
 app.get(/^(.+)$/, function(req, res){
-    res.sendFile( __dirname + "/dist/" + req.params[0]);
+    res.sendFile( __dirname + "/docs/" + req.params[0]);
 });
 
 /* Handling 404 errors */
