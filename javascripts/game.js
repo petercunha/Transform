@@ -48,11 +48,14 @@ function checkAnswer(e) {
 
         var answer = document.getElementById("answer").value.toLowerCase();
         var answers = ANSWER_MAP[level][0].split(',');
-
-        for (var i = 0; i < answers.length; i++)
-            if (answer == answers[i])
-                win();
-        else {
+        var hasWon = false;
+        for (var i = 0; i < answers.length; i++) {
+            if (answer == answers[i]) {
+              hasWon = true;
+              win();
+            }
+        }
+        if (!hasWon) {
           document.getElementById('status').innerHTML = "Incorrect";
           console.log("Incorrect!");
         }
@@ -64,10 +67,11 @@ function checkAnswer(e) {
 
 // Round has been won
 function win() {
-  document.getElementById('status').innerHTML = "Correct!";
-  document.getElementById('level').innerHTML = "Level: " + (level+1);
   console.log("Correct!");
   level++;
+
+  document.getElementById('status').innerHTML = "Correct!";
+  document.getElementById('level').innerHTML = "Level: " + (level+1);
 
   if (ANSWER_MAP.length <= level) {
     document.getElementById('status').innerHTML = "You win!";
