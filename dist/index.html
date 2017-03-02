@@ -3,13 +3,12 @@
 
 <head>
 	<title>Transform</title>
-	<link type="text/css" rel="stylesheet" href="stylesheets/style.css">
 </head>
 
 <body>
 
 	<!-- Audio -->
-	<audio id="player">
+	<audio id="player" loop>
 		<source id="sourceMp3" src="" type="audio/mp3" />
 		<p>Hey grandpa, your browser does not support HTML5.</p>
 	</audio>
@@ -25,13 +24,11 @@
 	<canvas id="cvs" width="600" height="20"></canvas>
 
 	<!-- Input -->
-	<input id="answer" type="text" onblur="this.focus()" onkeypress="return checkAnswer(event)" autofocus>
+	<input id="answer" type="text" onblur="this.focus()" autofocus>
 	</input>
 
 	<!-- Javascript -->
-	<script type="text/javascript" src="javascripts/game.js"></script>
-	<script type="text/javascript" src="javascripts/util.js"></script>
-	<script type="text/javascript" src="javascripts/music.js"></script>
+	<script type="text/javascript" src="javascripts/bundle.js"></script>
 
 </body>
 

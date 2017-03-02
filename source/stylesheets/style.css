@@ -3,7 +3,7 @@ body {
 }
 
 div {
-    top:45%;
+    top: 45%;
     text-align: center;
     font-family: sans-serif;
     color: black;
@@ -32,13 +32,4 @@ input {
     font-family: Arial, sans-serif;
     color: black;
     text-transform: uppercase;
-}
-
-img {
-    filter: gray;
-    /* IE6-9 */
-    filter: grayscale(1);
-    /* Microsoft Edge and Firefox 35+ */
-    -webkit-filter: grayscale(1);
-    /* Google Chrome, Safari 6+ & Opera 15+ */
 }

@@ -24,7 +24,7 @@ var ANSWER_MAP = [
     ],
     [
         "!,exclamation,exclamation point,exclamation mark",
-        "images/!.png"
+        "images/exc.png"
     ],
     [
         "person,human,man,guy",
@@ -42,7 +42,6 @@ newGame();
 function newGame() {
 
     var img = new Image();
-    console.log(level + " which is " + ANSWER_MAP[level][1]);
     img.src = ANSWER_MAP[level][1];
 
     img.onload = function() {
@@ -60,27 +59,28 @@ function newGame() {
 }
 
 // Handle enter-key hit
-function checkAnswer(e) {
-    if (e.keyCode == 13) {
+var listener = document.getElementById("answer");
+listener.addEventListener('keydown', function(e) {
+  if (e.keyCode == 13) {
 
-        var answer = document.getElementById("answer").value.toLowerCase();
-        var answers = ANSWER_MAP[level][0].split(',');
-        var hasWon = false;
-        for (var i = 0; i < answers.length; i++) {
-            if (answer == answers[i]) {
-              hasWon = true;
-              win();
-            }
-        }
-        if (!hasWon) {
-          document.getElementById('status').innerHTML = "Incorrect";
-          console.log("Incorrect!");
-        }
+      var answer = document.getElementById("answer").value.toLowerCase();
+      var answers = ANSWER_MAP[level][0].split(',');
+      var hasWon = false;
+      for (var i = 0; i < answers.length; i++) {
+          if (answer == answers[i]) {
+            hasWon = true;
+            win();
+          }
+      }
+      if (!hasWon) {
+        document.getElementById('status').innerHTML = "Incorrect";
+        console.log("Incorrect!");
+      }
 
-        document.getElementById("answer").value = "";
-        return false;
-    }
-}
+      document.getElementById("answer").value = "";
+      return false;
+  }
+});
 
 // Round has been won
 function win() {

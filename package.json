@@ -1,0 +1,33 @@
+{
+  "name": "transform",
+  "version": "1.0.0",
+  "description": "An HTML5 game that challenges the mind",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petercunha/Transform.git"
+  },
+  "keywords": [
+    "Dimensions",
+    "Game",
+    "HTML5",
+    "Canvas"
+  ],
+  "author": "Peter Cunha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/petercunha/Transform/issues"
+  },
+  "homepage": "https://github.com/petercunha/Transform#readme",
+  "devDependencies": {
+    "css-loader": "^0.26.2",
+    "express": "^4.15.0",
+    "image-webpack-loader": "^3.2.0",
+    "style-loader": "^0.13.2",
+    "webpack": "^2.2.1"
+  }
+}
