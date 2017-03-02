@@ -70,8 +70,8 @@ function win() {
   level++;
 
   if (ANSWER_MAP.length <= level) {
-    document.getElementById('status').innerHTML = "Transform";
-    document.getElementById('level').innerHTML = "You win! Thanks for playing.";
+    document.getElementById('status').innerHTML = "You win!";
+    document.getElementById('level').innerHTML = "Thanks for playing Transform.";
     clearInterval(ivl);
     ctx.clearRect(0, 0, c.width, c.height);
   } else {
