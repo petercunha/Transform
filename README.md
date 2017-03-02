@@ -1,7 +1,7 @@
 # Transform
 An HTML5 game that challenges the mind!
 
-[Click here to play](https://petercunha.github.io/Transform/)
+[Click here to play](https://petercunha.github.io/Transform/game)
 
 ## How it works
 
