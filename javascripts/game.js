@@ -1,27 +1,72 @@
-var SLICE_WIDTH = 1;
+var SLICE_WIDTH = 2;
 var WAIT_TIME = 200;
-
-
+var ANSWER_MAP = [
+    [
+        "circle,sphere",
+        "images/sphere.png"
+    ],
+    [
+        "triangle",
+        "images/triangle.png"
+    ]
+];
 var c = document.getElementById('cvs');
 var ctx = c.getContext('2d');
+var level = 0;
+var ivl;
 
-var img = new Image();
-img.src = "images/sphere.png";
+newGame();
 
-function sleep(delay) {
-  var start = new Date().getTime();
-  while (new Date().getTime() < start + delay);
+// Create a new game with a given answer and image
+function newGame() {
+
+    var img = new Image();
+    console.log(level + " which is " + ANSWER_MAP[level][1]);
+    img.src = ANSWER_MAP[level][1];
+
+    img.onload = function() {
+        var i = 0;
+         ivl = setInterval(function() {
+            if (i <= img.height) {
+                ctx.clearRect(0, 0, c.width, c.height);
+                ctx.drawImage(img, 0, i, img.width, SLICE_WIDTH, 30, 10, img.width, SLICE_WIDTH);
+                i++;
+            } else {
+                i = -1 * WAIT_TIME;
+            }
+        }, 0.11);
+    }
 }
 
-img.onload = function() {
-  var i = 0;
-  var ivl = setInterval(function () {
-    if (i <= img.height) {
-      ctx.clearRect(0,0,c.width,c.height);
-      ctx.drawImage(img, 0, i, img.width, SLICE_WIDTH, 10, 10, img.width, SLICE_WIDTH);
-      i++;
-    } else {
-      i = -1 * WAIT_TIME;
+// Handle enter-key hit
+function checkAnswer(e) {
+    if (e.keyCode == 13) {
+
+        var answer = document.getElementById("answer").value.toLowerCase();
+        var answers = ANSWER_MAP[level][0].split(',');
+
+        for (var i = 0; i < answers.length; i++)
+            if (answer == answers[i])
+                win();
+        else
+            console.log("Incorrect!");
+
+        document.getElementById("answer").value = "";
+        return false;
     }
-  }, 0.11);
+}
+
+// Round has been won
+function win() {
+  console.log("Correct!");
+  level++;
+
+  if (ANSWER_MAP.length <= level) {
+    alert("Congrats, you win!");
+    clearInterval(ivl);
+    ctx.clearRect(0, 0, c.width, c.height);
+  } else {
+    clearInterval(ivl);
+    newGame();
+  }
 }
