@@ -8,6 +8,10 @@ var ANSWER_MAP = [
     [
         "triangle",
         "images/triangle.png"
+    ],
+    [
+        "a",
+        "images/a.png"
     ]
 ];
 var c = document.getElementById('cvs');
@@ -48,8 +52,10 @@ function checkAnswer(e) {
         for (var i = 0; i < answers.length; i++)
             if (answer == answers[i])
                 win();
-        else
-            console.log("Incorrect!");
+        else {
+          document.getElementById('status').innerHTML = "Incorrect";
+          console.log("Incorrect!");
+        }
 
         document.getElementById("answer").value = "";
         return false;
@@ -58,11 +64,14 @@ function checkAnswer(e) {
 
 // Round has been won
 function win() {
+  document.getElementById('status').innerHTML = "Correct!";
+  document.getElementById('level').innerHTML = "Level: " + (level+1);
   console.log("Correct!");
   level++;
 
   if (ANSWER_MAP.length <= level) {
-    alert("Congrats, you win!");
+    document.getElementById('status').innerHTML = "Transform";
+    document.getElementById('level').innerHTML = "You win! Thanks for playing.";
     clearInterval(ivl);
     ctx.clearRect(0, 0, c.width, c.height);
   } else {
