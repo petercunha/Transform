@@ -10,8 +10,24 @@ var ANSWER_MAP = [
         "images/triangle.png"
     ],
     [
+        "f",
+        "images/f.png"
+    ],
+    [
+        "e",
+        "images/e.png"
+    ],
+    [
         "a",
         "images/a.png"
+    ],
+    [
+        "!,exclamation,exclamation point,exclamation mark",
+        "images/!.png"
+    ],
+    [
+        "person,human,man,guy",
+        "images/person.jpg"
     ]
 ];
 var c = document.getElementById('cvs');
