@@ -1,4 +1,5 @@
 var SLICE_WIDTH = 2;
+var SPEED = 0.11;
 var WAIT_TIME = 200;
 var ANSWER_MAP = [
     [
@@ -54,7 +55,7 @@ function newGame() {
             } else {
                 i = -1 * WAIT_TIME;
             }
-        }, 0.11);
+        }, SPEED);
     }
 }
 
@@ -85,6 +86,10 @@ function checkAnswer(e) {
 function win() {
   console.log("Correct!");
   level++;
+
+  if (level > 5) {
+    SPEED = 7;
+  }
 
   document.getElementById('status').innerHTML = "Correct!";
   document.getElementById('level').innerHTML = "Level: " + (level+1);
