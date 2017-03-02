@@ -5,7 +5,7 @@ module.exports = {
     devtool: false,
     entry: "./source/index.js",
     output: {
-        path: __dirname + "/docs/javascripts",
+        path: __dirname + "/docs/game/javascripts",
         filename: "bundle.js"
     },
     plugins: [

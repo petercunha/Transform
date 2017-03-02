@@ -1,35 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-	<title>Transform</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transform | Tutorial</title>
+    <link rel="stylesheet" href="tutorial.css">
 </head>
 
 <body>
+    <div class="container">
+        <h1 id="transform">Transform</h1>
+        <p>An HTML5 game that challenges the mind!</p>
 
-	<!-- Audio -->
-	<audio id="player" loop>
-		<source id="sourceMp3" src="" type="audio/mp3" />
-		<p>Hey grandpa, your browser does not support HTML5.</p>
-	</audio>
+        <p><h3><a href="/game/">Click here to play</a><h3></p>
+        <br />
+        <h2 id="how-it-works">How it works</h2>
 
-	<!-- Status -->
-	<div>
-		<br><br>
-		<h1 id="status">Transform</h1>
-		<h3 id="level">Level: 1</h3>
-	</div>
+        <p>The animation you see is a 1-Dimensional sliver of a 2D object floating up through your frame of reference. Your goal is to try to guess what the 2D object is! For example, in level 1, the correct answer is <strong>circle</strong>.</p>
 
-	<!-- Canvas -->
-	<canvas id="cvs" width="600" height="20"></canvas>
+        <p>Here’s what you see</p>
 
-	<!-- Input -->
-	<input id="answer" type="text" onblur="this.focus()" autofocus>
-	</input>
+        <p><img src="https://i.imgur.com/7ckYS9k.gif" alt="" /></p>
 
-	<!-- Javascript -->
-	<script type="text/javascript" src="javascripts/bundle.js"></script>
+        <p>And here’s the actual image</p>
 
+        <p><img src="https://i.imgur.com/5qdDcyw.png" alt="" /></p>
+
+    </div>
 </body>
 
 </html>
