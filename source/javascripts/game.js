@@ -1,7 +1,13 @@
+var sound = require('./sound.js');
+
 var SLICE_WIDTH = 2;
 var SPEED = 0.11;
 var WAIT_TIME = 200;
-var ANSWER_MAP = [
+var c = document.getElementById('cvs');
+var ctx = c.getContext('2d');
+var level = 0;
+var ivl;
+const ANSWER_MAP = [
     [
         "circle,sphere",
         "images/sphere.png"
@@ -31,11 +37,9 @@ var ANSWER_MAP = [
         "images/person.jpg"
     ]
 ];
-var c = document.getElementById('cvs');
-var ctx = c.getContext('2d');
-var level = 0;
-var ivl;
 
+// Setup game
+sound.playRandomMusic();
 newGame();
 
 // Create a new game with a given answer and image
@@ -75,6 +79,7 @@ listener.addEventListener('keydown', function(e) {
       if (!hasWon) {
         document.getElementById('status').innerHTML = "Incorrect";
         console.log("Incorrect!");
+        sound.playSFX("failure");
       }
 
       document.getElementById("answer").value = "";
@@ -85,6 +90,7 @@ listener.addEventListener('keydown', function(e) {
 // Round has been won
 function win() {
   console.log("Correct!");
+  sound.playSFX("success");
   level++;
 
   if (level > 5) {

@@ -1,7 +1,7 @@
 // Javascripts
 require('./javascripts/game.js');
-require('./javascripts/util.js');
-require('./javascripts/music.js');
+import './javascripts/util.js';
+import './javascripts/sound.js';
 
 // Stylesheets
 require('./stylesheets/style.css');

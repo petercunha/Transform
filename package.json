@@ -24,6 +24,9 @@
   },
   "homepage": "https://github.com/petercunha/Transform#readme",
   "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-es2015": "^6.22.0",
     "css-loader": "^0.26.2",
     "express": "^4.15.0",
     "style-loader": "^0.13.2",

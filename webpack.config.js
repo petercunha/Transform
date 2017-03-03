@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 
+process.noDeprecation = true;
 module.exports = {
     context: __dirname,
     devtool: false,
@@ -16,7 +17,16 @@ module.exports = {
         }),
     ],
     module: {
-        loaders: [{
+        loaders: [
+            {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel-loader',
+                query: {
+                    presets: ['es2015']
+                }
+            },
+            {
                 test: /\.css$/,
                 loader: "style-loader!css-loader"
             },
