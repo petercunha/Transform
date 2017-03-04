@@ -1,6 +1,11 @@
-const songList = [
-    'audio/music/song1.mp3',
-    'audio/music/song2.mp3',
+const MUSIC_DIR = 'audio/music/';
+const SFX_DIR   = 'audio/sfx/';
+const SONG_LIST = [
+    'song1.mp3',
+    'song2.mp3',
+    'song3.mp3',
+    'song4.mp3',
+    'song5.mp3'
 ];
 
 function getRandomInt(min, max) {
@@ -13,13 +18,13 @@ function getRandomInt(min, max) {
 module.exports = {
     playRandomMusic: function() {
         var player = document.getElementById('player');
-        player.src = songList[getRandomInt(0, songList.length)];
+        player.src = MUSIC_DIR + SONG_LIST[getRandomInt(0, SONG_LIST.length)];
         player.load();
         player.play();
     },
 
     playSFX: function(sound) {
-        var audio = new Audio('audio/sfx/' + sound + '.mp3');
+        var audio = new Audio(SFX_DIR + sound + '.mp3');
         audio.play();
     }
 }
