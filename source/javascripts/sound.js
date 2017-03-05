@@ -14,8 +14,9 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-// Public stuff
 module.exports = {
+
+    // Play a random song
     playRandomMusic: function() {
         var player = document.getElementById('player');
         player.src = MUSIC_DIR + SONG_LIST[getRandomInt(0, SONG_LIST.length)];
@@ -23,8 +24,10 @@ module.exports = {
         player.play();
     },
 
+    // Play a sound effect
     playSFX: function(sound) {
         var audio = new Audio(SFX_DIR + sound + '.mp3');
         audio.play();
     }
+    
 }
